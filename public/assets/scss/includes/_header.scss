@@ -1,0 +1,45 @@
+// - header - //
+header {
+    position: fixed;
+    z-index: 600;
+    top: 0;
+    left: 250px;
+    width: calc(100% - 250px);
+    background-color: $white-color;
+    .search-warp {
+      width:320px;
+      .search-control {
+        max-width: 320px;
+      }
+    }
+}//header
+
+
+/*##################################
+R E S P O N S I V E
+##################################*/
+
+// Maximum Width
+/*Large devices (desktops, <1199px) xl*/
+@media (max-width: 1199.98px) {
+
+}
+
+/* Medium devices (tablets, <992px) lg*/
+@media (max-width: 991.98px) {
+
+}//991.98
+
+/* Small devices (landscape phones, <768px) md*/
+@media (max-width: 767.98px) {
+  header {
+    left: 0;
+    width: calc(100%);
+  }//header
+}//767.98
+
+
+/* Extra small devices (portrait phones, <576px) sm*/
+@media (max-width: 575.98px) {
+
+}//575.98px

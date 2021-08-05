@@ -1,0 +1,293 @@
+// - e dRop - style - //
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  
+    &.has-sidebar .menu-overlay {
+      pointer-events: all;
+      opacity: 1;
+    }
+}//body
+
+.spinner-loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .spinner-border {
+        border-width: 1px;
+    }
+}//spinner-loader
+
+.count {
+    position: absolute;  
+    top: -16px;
+    right: -8px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notification-control {
+    .has-notification {
+        position: relative;
+        &::before {
+        content: '';
+        position: absolute;
+        top: 11px;
+        right: 11px;
+        width: 7px;
+        height: 7px;
+        background-color: $danger-color;
+        border-radius: 50%;
+        box-shadow: 0 0 0 rgba($danger-color, 0.4);
+        animation: pulse 1s infinite;
+        }
+    }//has-notification
+}//notification-control 
+
+
+.notification-item {
+    color: $gray-2-color;
+    .icon-img {}
+    .notification-label {}
+    .notification-subtext {
+        color: $gray-3-color;
+    }
+    &:hover {
+        background-color: lighten($primary-color, 37%);
+        color: $primary-color;
+    }//hover
+}//notification-item
+
+.icon-img {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-img-1 {
+    width: 45px;
+    height: 45px;
+}
+
+.user-control {
+    .user-img {
+        width: 45px;
+        height: 45px;
+    }
+}//user-control
+
+.availability {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 25px;
+    border: 2px solid $white-color;
+    top: 3px;
+    right: -3px;
+}
+
+.search-control {
+    position: relative;
+    .search-icon {
+        position: absolute;
+        top: 8px;
+        left: 15px;
+        color: $gray-3-color;
+    }
+    .form-control-search {
+        padding-left: 35px;
+    }
+}//search-control
+
+.search-warp {
+    position: relative;
+    width: 100%;
+    .search-filter {
+        @include transition;
+        position: absolute;
+        top: 38px;
+        width: 100%;
+        background-color: $white-color;
+        box-shadow: $shadow;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        padding: 15px;
+        .inner {
+            max-height: 200px;
+            ul {
+                margin: 0;
+                padding: 0;
+                li {
+                    padding: 8px 12px;
+                    cursor: pointer;
+                    color: $gray-2-color;
+                    border-radius: 9px;
+                    &:hover {
+                        background-color: lighten($primary-color, 37%);
+                        color: $primary-color;
+                    }//hover
+                    &.no-data {
+                        pointer-events: none;
+                        opacity: .8;
+                    }//no-data
+                }//li
+            }//ul
+        }//inner
+
+        &.show {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: initial;
+        }//show
+    }//search-filter
+}//search-wrap
+
+main {
+    width: calc(100% - 250px);
+    margin:120px 0 0 250px;
+}//main
+
+.page-info {
+    margin-top: -20px;
+}//page-info
+
+
+.user-list {
+    margin: 0;
+    padding: 0;
+    li {
+        display: flex;
+        align-items: center;
+        figure {
+            flex-shrink: 0;
+                img {
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 50%;
+                }
+        }//figure
+        .data {}
+        .actions {
+            flex-shrink: 0;
+            display: flex;
+        }
+        &:not(:last-of-type) {
+            margin-bottom: 24px;
+        }
+    }//li
+}//user-list
+
+
+.icon-list {
+    padding: 0;
+    margin: 0;
+    li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        i {
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }//li
+}//icon-list
+
+
+
+//Start Pages
+.page-signin {
+    .brand {
+        max-width: 150px;
+    }
+}//page-signin
+
+
+.timeline {
+    position: relative;
+    max-width: 460px; 
+  ul {
+    &.tl {
+        margin: 20px 0;
+        padding: 0;
+        display: inline-block;        
+        li {
+            list-style: none;
+            margin: auto;
+            margin-left: 85px;
+            min-height: 40px;
+            /*background: rgba(255,255,0,0.1);*/
+            border-left: 1px dashed $gray-4-color;
+            padding: 0 0 40px 30px;
+            position: relative;
+            &:last-child {
+                border-left: 0;
+                min-height: auto;
+                padding-bottom: 0;
+            }
+            &::before {
+                position: absolute;
+                left: -11px;
+                top: 0;
+                content: " ";
+                border: 5px solid $primary-color;
+                border-radius: 500%;
+                background: $primary-lighten;
+                height: 20px;
+                width: 20px;
+            }
+            &:first-child {
+                &::before {
+                    border-color: $dark-color;
+                    background: $dark-lighten;
+                }
+            }
+            .item-title {}
+            .item-detail {}
+            .timestamp {
+                position: absolute;
+                width: 100px;
+                left: -135px;
+            }
+        }//li
+      }//tl
+  }//ul
+}//timeline
+
+.sticky-item {
+    position: sticky;
+    top: 90px;
+}
+
+.profile-pic {
+    figure {
+        margin: 0;
+        img {
+            width: 125px;
+            z-index: 2;
+        }
+    }
+}
+
+.page-dashboard {}
+.page-trips {}
+.page-administation {}
+.page-drivers {}
+.page-add-driver {}
+.page-driver-overview {}
+.page-zone {}
+.page-vehicle {}
+.page-coupons {}
+.page-bookings {}
+//Stop Pages

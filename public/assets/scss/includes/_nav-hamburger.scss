@@ -1,0 +1,186 @@
+// - nav - //
+
+.nav-icon {
+  width: 35px;
+  height: 25px;
+  left: 0;
+  cursor: pointer;
+  position: relative;
+
+span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 50%;
+  background: $white-color;
+  opacity: 1;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+span:nth-child(even) {
+  left: 50%;
+  border-radius: 0 25px 25px 0;
+}
+span:nth-child(odd) {
+  left:0px;
+  border-radius: 25px 0 0 25px;
+}
+
+span:nth-child(2) {
+  top: 0px;
+}
+
+span:nth-child(3),
+span:nth-child(4) {
+  top: 10px;
+}
+
+span:nth-child(5),
+span:nth-child(6) {
+  top: 20px;
+}
+
+&.open span {
+  background: $black-color;
+}
+&.open span:nth-child(1),
+&.open span:nth-child(6) {
+  transform: rotate(45deg);
+}
+
+&.open span:nth-child(2),
+&.open span:nth-child(5) {
+  transform: rotate(-45deg);
+}
+
+&.open span:nth-child(1) {
+  left: 3px;
+  top: 6px;
+}
+
+&.open span:nth-child(2) {
+  left: calc(50% - 3px);
+  top: 6px;
+}
+
+&.open span:nth-child(3) {
+  left: -50%;
+  opacity: 0;
+  top: 11px;
+}
+
+&.open span:nth-child(4) {
+  left: 100%;
+  opacity: 0;
+  top: 11px;
+}
+
+&.open span:nth-child(5) {
+  left: 3px;
+  top: 18px;
+}
+
+&.open span:nth-child(6) {
+  left: calc(50% - 3px);
+  top: 18px;
+}
+}//nav-icon
+
+.hamburger {z-index: 1515; @include transition;
+  left: 15px;
+  margin-top: 2px;
+  transform: translate(0, 0);  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  &.active {
+    position: fixed !important;
+    transform: translate(320px, 0);  
+  }
+}
+
+
+.side-nav {
+  top: 0;
+  left: 0;
+  width: 400px;
+  transform: translate(-100%, 0);  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  box-shadow: $shadow-x-1;
+  z-index: 50;
+
+  .nav-header {
+    svg {
+      path {fill: $black-color;}
+    }
+  }
+  
+  .nav-data {
+    left: 0;
+    top: 80px;
+    width: 100%;
+    height: 100%;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+
+    .nav-primary {
+      li {
+        padding: 5px 0;
+        a {
+          display: block;
+          padding: 5px 0;
+          color: $black-color;
+          &:hover {
+            color: $dark-color;
+            opacity: 0.8;
+          }
+        }
+      }
+      &.nav-sm {
+        li {
+          padding: 3px 0;
+          a {opacity: 0.8; padding: 2px 0;}
+        }
+      }
+    }//nav-primary
+    .lilac-logo {@include transition;
+      filter: brightness(0) contrast(100);
+      &:hover {opacity: 0.8;}
+    }
+  }
+  &.open {
+    transform: none;
+  }
+}
+
+.nav-overlay {background: rgba($black-color,0.5); position: fixed; z-index: 10;
+left: 0;
+top: 0;
+opacity: 0;
+@include transition;
+pointer-events: none;
+}
+
+body {
+  &.menu-opened {
+    overflow-y:hidden;
+    .nav-overlay {opacity: 1;}
+  }
+}
+
+
+// R E S P O N S I V E
+
+@media (max-width: 767.98px) {
+  
+  .hamburger {left: auto; right: 15px; margin: 0;
+    &.active {
+      transform: translate(0px, 0);  
+    }
+  }
+    .side-nav {
+      top: 0;
+      left: 0;
+      width: 100%;
+      transform: translate(-120%, 0); 
+    }
+}

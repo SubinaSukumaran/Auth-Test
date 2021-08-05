@@ -1,0 +1,22 @@
+// - pagination - //
+
+
+.pagination {
+    .page-item {
+        &.disabled {
+        .page-link {
+            color: $gray-2-color;
+        }
+        }
+        .page-link {
+        color: $primary-color;
+        }
+        &.active {
+        .page-link {
+            color: $white-color;
+            background: $primary-color;
+            border-color: $primary-color;
+        }
+        }   
+    }
+}//pagination

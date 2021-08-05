@@ -1,0 +1,109 @@
+// - accordion - //
+.accordion>.card:not(:first-of-type):not(:last-of-type),
+.accordion>.card:first-of-type {border-bottom:1px solid rgba(0,0,0,.125); border-radius:.25rem; }
+.accordion>.card:last-of-type {border-radius:.25rem; }
+.accordion {
+  .card-header {
+    padding-left: 50px; 
+    position: relative;
+    // &[data-toggle="collapse"] {
+    //   cursor: pointer;
+    // }
+    .title {}//title
+    &::after,
+    &::before {
+      @include transition;
+      position: absolute; 
+      display: flex;
+      align-items: center;
+      justify-content: center;  
+      top: 8px; 
+      left: 15px;
+      width: 30px; 
+      height: 30px; 
+      text-align: center;
+      // font-family: "Font Awesome 5 Free";
+      // font-weight: 900;
+      // font-size: 25px; 
+      // line-height: 25px; 
+      // color: $gray-2-color;
+      background: url('../images/icons/angle-down.svg') no-repeat center;
+      background-size: 20px;
+      opacity: .6;
+      }//after,before
+
+      &[aria-expanded="true"]::before,
+      &[aria-expanded="true"]::before {
+        //content:"\f107";
+        content:'';
+        transform: rotateZ(-180deg);
+      }//expand true
+
+      &[aria-expanded="false"]::before,
+      &[aria-expanded="false"]::before {
+        //content:"\f107";
+        content:'';
+        // transform: rotateZ(0);
+        padding-bottom: 1px;
+      }//expand false
+      
+    &:hover {
+      .title {
+        color: $gray-1-color !important;
+      }//title      
+    }//hover
+  }//card-header
+
+  .card-body {
+    p:last-of-type {
+      margin-bottom: 0;
+    }
+  }//card-body
+
+  ///type-simple
+  &.type-simple {
+    .card {
+      border: none !important;
+      border-radius: 0 !important;
+      background: transparent;
+      .card-header {
+        background: transparent;
+        border: 0;
+        padding: 10px 0 10px 40px;
+        &::after,
+        &::before {
+          left: 0;
+        }
+      }//card-header
+      .card-body {
+        padding: 0 0 0 40px;
+      }//card-body
+
+      &.border-bottom {
+        border-bottom: 1px solid $smoke-color !important;
+        .card-body {
+          padding-bottom:15px;
+        }//card-body
+      }//border-bottom
+    }//card
+  }//type-simple
+
+  
+   ///icon-simple
+   &.icon-right {
+    .card {      
+      .card-header {        
+        padding: 10px 40px 10px 0;        
+        &::after,
+        &::before {
+          left: auto;
+          right: 0;
+        }
+      }
+      .card-body {
+        padding: 0 40px 0 0;
+      }
+    }
+  }//icon-right
+
+}//accordion

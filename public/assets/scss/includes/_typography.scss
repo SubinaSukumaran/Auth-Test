@@ -1,0 +1,231 @@
+
+// - typography - //
+
+/* Google fonts */
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+
+
+// typographies [calling from google fonts from HTML head]
+$typo-1:     'Roboto', serif;
+$typo-2:     'Source Sans Pro', sans-serif;
+
+// typography weights
+  /*go to _mixin.scss*/
+
+
+.typo-1 {
+  font-family: $typo-1;
+}
+
+.typo-2 {
+  font-family: $typo-2;
+}
+
+//text colors
+.text-white       {color: $white-color;}
+.text-black       {color: $black-color;}
+.text-primary     {color: $primary-color !important;}
+.text-secondary   {color: $secondary-color !important;}
+.text-blue        {color: $blue-color;}
+.text-info        {color: $info-color !important;}
+.text-success     {color: $success-color !important;}
+.text-warning     {color: $warning-color !important;}
+.text-danger      {color: $danger-color !important;}
+.text-dark        {color: $dark-color;}
+.text-gray-1      {color: $gray-1-color;}
+.text-gray-2      {color: $gray-2-color;}
+.text-gray-3      {color: $gray-3-color;}
+.text-smoke       {color: $smoke-color;}
+.text-offwhite    {color: $offwhite-color;}
+
+//gradient
+.text-gradient    {@include gradient-text;}
+.text-gradient-animate    {@include gradient-text-animate;}
+
+
+// extent (@extend %body-font)
+%body-font {
+  font-family: $typo-1;
+  font-size: 14px;
+  line-height: 1.5;
+  @include font-weight(regular); 
+  // https://sass-lang.com/guide
+}
+
+body, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .navbar, .brand, .btn-simple, .alert, a, .td-name, td, button.close {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+  
+body {
+  @extend %body-font;
+  color: $gray-2-color;
+  overflow-x: hidden;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  // font-family: $typo-2;
+  @include font-weight(bold);
+}
+
+h1, .h1 {
+  font-size: 45px;
+  line-height: 1.2;
+
+}
+
+h2, .h2 {
+  font-size: 35px;
+  line-height: 1.2;
+}
+
+h3, .h3 {
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+h4, .h4 {
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+h5, .h5 {
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+h6, .h6 {
+  font-size: 15px;
+  line-height: 1.4;
+}
+small, .small {
+  font-size: 13px;
+}
+
+/*go to _mixin.scss*/
+.fw-thin {
+  @include font-weight(thin); /*100*/ // [Typo-1 only]
+}
+.fw-extra-light {
+  @include font-weight(extra-light); /*200*/ // [Typo-2 only]
+}
+.fw-light {
+  @include font-weight(light); /*300*/
+}
+.fw-regular {
+  @include font-weight(regular); /*400*/
+}
+.fw-medium {
+  @include font-weight(medium); /*500*/ // [Typo-1 only]
+}
+.fw-semi-bold {
+  @include font-weight(semi-bold); /*600*/ // [Typo-2 only]
+}
+.fw-bold {
+  @include font-weight(bold); /*700*/
+}
+// .fw-extra-bold {
+//   @include font-weight(extra-bold); /*800*/
+// }
+.fw-black {
+  @include font-weight(black); /*900*/
+}
+  
+// font size  
+.f-size-8 {
+  font-size: 8px;
+}
+.f-size-9 {
+  font-size: 9px;
+}
+.f-size-10 {
+  font-size: 10px;
+}
+.f-size-11 {
+  font-size: 11px;
+}
+.f-size-12 {
+  font-size: 12px;
+}
+.f-size-13 {
+  font-size: 13px;
+}
+.f-size-14 {
+  font-size: 14px;
+}
+.f-size-15 {
+  font-size: 15px;
+}
+.f-size-16 {
+  font-size: 16px;
+}
+.f-size-17 {
+  font-size: 17px;
+}
+.f-size-18 {
+  font-size: 18px;
+}
+.f-size-19 {
+  font-size: 18px;
+}
+.f-size-20 {
+  font-size: 20px;
+}
+.f-size-21 {
+  font-size: 21px;
+}
+.f-size-22 {
+  font-size: 22px;
+}
+.f-size-23 {
+  font-size: 23px;
+}
+.f-size-24 {
+  font-size: 24px;
+}
+.f-size-25 {
+  font-size: 25px;
+}
+.f-size-26 {
+  font-size: 26px;
+}
+.f-size-27 {
+  font-size: 27px;
+}
+.f-size-28 {
+  font-size: 28px;
+}
+.f-size-30 {
+  font-size: 30px;
+}
+
+//Text limits
+.one-line, .two-line, .three-line, .four-line  {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+  .one-line  {
+    -webkit-line-clamp: 1;
+  }
+  .two-line  {
+    -webkit-line-clamp: 2;
+  }
+  .three-line  {
+    -webkit-line-clamp: 3;
+  }
+  .four-line  {
+    -webkit-line-clamp: 4;
+  }
+
+
+/*##################################
+R E S P O N S I V E
+##################################*/
+
+@media (max-width: 767.98px) {
+
+
+}//767.98px

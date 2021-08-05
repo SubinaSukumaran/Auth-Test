@@ -1,0 +1,418 @@
+#rMenu,
+#rMenu ul,
+#rMenu ul li,
+#rMenu ul li a,
+#rMenu #menu-button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+}
+#rMenu:after,
+#rMenu > ul:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+#rMenu #menu-button {
+  display: none;
+  border-radius: .15rem;
+}
+#rMenu {
+  width: auto;
+  line-height: 1;
+  z-index: 15;
+}
+#menu-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: $primary-color;
+  transition: all 0.25s ease-out;
+}
+#rMenu > ul > li {
+  float: left;
+  padding: 0 15px;
+}
+#rMenu > ul > li:first-child {
+  padding-left: 0;
+}
+#rMenu.align-center > ul {
+  font-size: 0;
+  text-align: center;
+}
+#rMenu.align-center > ul > li {
+  display: inline-block;
+  float: none;
+}
+#rMenu.align-center ul ul {
+  text-align: left;
+}
+#rMenu.align-right > ul > li {
+  float: right;
+}
+#rMenu.align-right ul ul {
+  text-align: right;
+}
+#rMenu > ul > li > a {
+  padding: 15px 25px;
+  font-size: 14px;
+  text-decoration: none;
+  color: $dark-color;
+  @include font-weight(semi-bold);
+}
+#rMenu > ul > li:hover > a,
+#rMenu > ul > li.active > a,
+#rMenu > ul > li.current-menu-item > a {
+  color: $primary-color;
+}
+
+#rMenu > ul > li,
+#rMenu > ul > li:first-child > a{
+  padding-left: 0;
+}
+
+#rMenu > ul > li.has-sub > a {
+  padding-right: 25px;
+}
+#rMenu > ul > li.has-sub > a::after {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  width: 4px;
+  height: 4px;
+  border-bottom: 1px solid $gray-1-color;
+  border-right: 1px solid $gray-1-color;
+  content: ""; 
+  transform: rotate(45deg);
+  transition: border-color 0.2s ease;
+}
+#rMenu > ul > li.has-sub:hover > a::after {
+  border-color: $primary-color;
+}
+#rMenu ul ul {
+  position: absolute;
+  left: -9999px;
+  background: $white-color;
+  border-radius:.25rem;
+  box-shadow: $shadow;
+    &:before {
+      content: '';
+    position: absolute;
+    left: 50%;
+    top: -7px;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid $white-color;
+    z-index: 2;
+    }
+    &:after {
+      content: '';
+    position: absolute;
+    left: 50%;
+    top: -8px;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-bottom: 9px solid rgba($gray-1-color,0.20);
+    z-index: 1;
+    }
+}
+#rMenu li:hover > ul {
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid rgba($gray-1-color,0.20);
+}
+#rMenu.align-right li:hover > ul {
+  right: 0;
+}
+#rMenu ul ul ul {
+  margin-left: 100%;
+  top: 0;  
+}
+#rMenu.align-right ul ul ul {
+  margin-left: 0;
+  margin-right: 100%;
+}
+#rMenu ul ul li {
+  transition: height .2s ease;
+}
+#rMenu ul li:hover > ul > li {
+}
+#rMenu ul ul li a {
+  padding: 10px 15px;
+  min-width: 240px;
+  font-size: 14px;
+  line-height: 21px;
+  text-decoration: none;
+  color: $dark-color;
+}
+#rMenu ul ul li.current-menu-item a {
+  color: $primary-color;
+}
+#rMenu ul ul li:hover > a,
+#rMenu ul ul li a:hover {
+  background: rgba($primary-color, 0.15);
+   color: $primary-color;
+}
+#rMenu ul ul li.active a {
+  color: $primary-color;
+}
+#rMenu ul ul li.has-sub > a::after {
+  position: absolute;
+  top: 13px;
+  right: 10px;
+  width: 4px;
+  height: 4px;
+  border-bottom: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
+  content: "";  
+  transform: rotate(-45deg);  
+  transition: border-color 0.2s ease;
+}
+#rMenu.align-right ul ul li.has-sub > a::after {
+  right: auto;
+  left: 10px;
+  border-bottom: 0;
+  border-right: 0;
+  border-top: 1px solid #dddddd;
+  border-left: 1px solid #dddddd;
+}
+#rMenu ul ul li.has-sub:hover > a::after {
+  border-color: #ffffff;
+}
+
+#rMenu {
+  ul {
+    li {
+      &.nav-social {background: $primary-color; border-bottom: 1px solid  rgba(120, 120, 120, 0.15);
+        a {
+          color: $white-color;
+          &:hover {color: $danger-color;}
+        }        
+      }//nav-social
+      ul {
+        li {
+          text-align: left;         
+        }
+      }
+    }//li
+  }
+}//#rMenu
+
+li.first-item a {
+  padding-left: 0 !important;
+}
+
+/* R E S P O N S I V E */
+
+@media (max-width: 767.98px){
+    #rMenu {
+    width: 100%;
+    max-width: 540px;
+    position: fixed;
+    top: 10px;
+  }
+  #rMenu ul {
+    width: 100%;
+    display: none;
+    text-align: left;
+  }
+  #rMenu.align-center > ul,
+  #rMenu.align-right ul ul {
+    text-align: left;
+  }
+  #rMenu ul li,
+  #rMenu ul ul li,
+  #rMenu ul li:hover > ul > li {
+    width: 100%;
+    height: auto;
+    border-top: 1px solid rgba(120, 120, 120, 0.15);
+  }
+  #rMenu ul li a,
+  #rMenu ul ul li a {
+    width: 100%;
+    padding: 19px 15px !important;
+  }
+  #rMenu > ul > li,
+  #rMenu.align-center > ul > li,
+  #rMenu.align-right > ul > li {
+    float: none;
+    display: block;
+  }
+  #rMenu ul ul li a {
+    padding: 12px 12px 12px 20px;
+    font-size: 13px;
+    background: none;
+  }
+  #rMenu ul ul li:hover > a,
+  #rMenu ul ul li a:hover {
+  }
+  #rMenu ul ul ul li a {
+    padding-left: 40px;
+  }
+  #rMenu ul ul,
+  #rMenu ul ul ul {
+    background: none;
+    box-shadow: none !important;
+    position: relative;
+    left: 0;
+    right: auto;
+    width: 100%;
+    margin: 0;    
+    box-shadow: none;
+    border-radius: 0;
+    border: 0 !important;
+    &::before, &::after {display: none;}
+  }
+  #rMenu > ul > li.has-sub > a::after,
+  #rMenu ul ul li.has-sub > a::after {
+    display: none;
+  }
+  #menu-line {
+    display: none;
+  }
+  #rMenu #menu-button {
+    display: block;
+    position: absolute;
+    z-index: 1515;
+    right: 20px;
+    top: 5px;
+    padding: 20px 22px;
+    height: 100%;
+    color: $dark;
+    cursor: pointer;
+    font-size: 12px;
+    background: $primary-alpha;
+    text-transform: uppercase;
+  }
+  #rMenu #menu-button::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    right: 7px;
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: #000000;
+    @include transition;
+  }
+  #rMenu #menu-button::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 7px;
+    display: block;
+    width: 30px;
+    height: 10px;
+    border-top: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+    @include transition;
+  }
+  #rMenu .submenu-button {
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    top: 0;
+    display: block;
+    border-left: 1px solid rgba(120, 120, 120, 0.15);
+    height: 52px;
+    width: 52px;
+    cursor: pointer;
+  }
+  #rMenu .submenu-button::after {
+    content: '';
+    position: absolute;
+    top: 21px;
+    left: 26px;
+    display: block;
+    width: 1px;
+    height: 11px;
+    background: $dark;
+    transform: rotate(0deg);
+    z-index: 99; @include transition;
+  }
+  #rMenu .submenu-button::before {
+    content: '';
+    position: absolute;
+    left: 21px;
+    top: 26px;
+    display: block;
+    width: 11px;
+    height: 1px;
+    background: $dark;
+    transform: rotate(0deg);
+    z-index: 99;   @include transition;
+  }
+  #rMenu #menu-button.menu-opened {background: $primary-color;}
+  #rMenu #menu-button.menu-opened::after {
+    transform: rotate(-45deg);
+    top: 19px;
+    background: $white-color;
+  }
+  #rMenu #menu-button.menu-opened::before {
+    height: 0; border-bottom: 0; transform: rotate(45deg); border-color: $white-color;
+  }
+
+
+  #rMenu .submenu-button.submenu-opened:after {
+    display: none;
+  }
+
+  .nav-parent {position: fixed !important; top: 0; right: -100%; width: calc(100% - 20%) !important; height:100vh;  
+    // min-height: calc(100vh + 70px);     
+   background: $white-color;
+     @include transition;
+    display: block !important; overflow-y:auto;  box-shadow: -1px 0 15px rgba(0, 0, 0, 0.1);    
+    >li:first-child {
+      padding-top: 19px !important;
+    }
+    &.open {right: 0;}
+  }//nav-parent
+
+  
+
+  header {
+    &.sticky {
+      #rMenu #menu-button {top: 0;}
+      .nav-parent {
+        top: 0;
+        >li:first-child {
+          padding-top: 8px !important;
+        }
+      }
+    }
+  }
+
+  body.menu-opened {
+    overflow: hidden;
+  }
+
+  #rMenu:after, #rMenu>ul:after {
+    display: none;
+  }
+
+}//767.98
+
+
+@media (max-width: 575.98px) {
+  #rMenu {
+    right: 15px;
+  }
+  #rMenu #menu-button {
+    right: 0;
+  }
+}//575.98px

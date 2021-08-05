@@ -1,0 +1,43 @@
+/**---
+	Project Name: e dRop
+	Doc Name 	  : haris-webdesign.scss
+  Author Name	: Haris Webdesign [Haris karat]
+  Email       : haris.karat@gmail.com
+  Google      : #harisWebdesign
+--- **/
+
+@import "includes/mixin";
+@import "includes/variables";
+@import "includes/animations";
+@import "includes/typography";
+@import "includes/reset";
+@import "includes/header";
+@import "includes/buttons";
+@import "includes/badges";
+@import "includes/dropdown";
+@import "includes/card";
+@import "includes/nav";
+@import "includes/hamburger";
+@import "includes/form";
+@import "includes/accordion";
+@import "includes/pagination";
+@import "includes/owl";
+@import "includes/scrollbar";
+@import "includes/popover";
+@import "includes/notify";
+@import "includes/sidebar";
+@import "includes/table";
+@import "includes/chart";
+@import "includes/footer";
+@import "includes/filters";
+@import "includes/modal";
+@import "includes/style";
+@import "includes/responsive";
+
+.coupon-code {
+  padding: 3px;
+  min-width: 150px;
+  border: 1px dashed $white-color;
+  background-color: rgba($white-color, .2);
+  border-radius: .25rem;
+}

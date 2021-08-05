@@ -1,0 +1,77 @@
+//mixin
+
+// Typography
+@mixin font-weight($weight) {
+    $weights: (
+      thin: 100, // [Typo-1 only]
+      extra-light: 200, // [Typo-2 only]
+      light: 300,
+      regular: 400,
+      medium: 500,  // [Typo-1 only]
+      semi-bold: 600, // [Typo-2 only]
+      bold: 700,
+      //extra-bold: 800,
+      black: 900
+    );
+    $output: $weight;
+        @if map-has-key($weights, $weight) {
+        $output: map-get($weights, $weight);
+    }
+    font-weight: $output;
+}//  @include font-weight(regular); /*thin/light/regular/medium/semi-bold/bold/extra-bold/black*/
+
+// Transition
+@mixin transition($what: all, $time: 0.3s, $how: ease-in-out) {
+    -webkit-transition: $what $time $how;
+    -moz-transition:    $what $time $how;
+    -ms-transition:     $what $time $how;
+    -o-transition:      $what $time $how;
+    transition:         $what $time $how;
+}// @include transition;
+
+@mixin transition2($what: transform, $time: 0.5s, $how: cubic-bezier(0.77, 0.2, 0.05, 1)) {
+    -webkit-transition: $what $time $how;
+    -moz-transition:    $what $time $how;
+    -ms-transition:     $what $time $how;
+    -o-transition:      $what $time $how;
+    transition:         $what $time $how;
+}// @include transition2;
+
+/*transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);*/
+
+// Position
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+// Gradient animate
+@mixin gradient-animate ($angle: 55deg, $color: $primary-color, $amount: $blue-color) {
+animation: gradient-animate 8s ease infinite;
+background: -webkit-linear-gradient($angle, $color,$amount );
+background-size: 200%;
+}
+@keyframes gradient-animate { 
+    0%{background-position:0% 55%}
+    50%{background-position:100% 45%}
+    100%{background-position:0% 55%}
+}// @include gradient-animate;
+
+// Gradient Text
+@mixin gradient-text($angle: 55deg, $color: $primary-color, $amount: $blue-color) {
+    color: $color;
+    background: -webkit-linear-gradient($angle, $color,$amount );
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+} // @include gradient-text;
+@mixin gradient-text-animate($angle: 55deg, $color: $primary-color, $amount: $blue-color) {
+    color: $color;
+    background: -webkit-linear-gradient($angle, $color,$amount );
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: gradient-animate 8s ease infinite;
+    background-size: 200%;
+} // @include gradient-text-animate;

@@ -1,0 +1,122 @@
+// - badges - //
+
+.badge {
+    padding: 8px 14px;
+    @include font-weight(regular);
+    font-size: 13px;
+    
+    &.badge-dark {
+        background-color: $dark-color !important; 
+        color: $white-color
+    }
+    
+    &.badge-secondary {
+        background-color: $secondary-color !important; 
+        color: $white-color
+    }    
+        
+    &.badge-gray-1 {
+        background-color: $gray-1-color !important; 
+        color: $white-color
+    }
+    
+    &.badge-gray-2 {
+        background-color: $gray-2-color !important; 
+        color: $white-color
+    }
+    
+    &.badge-gray-3 {
+        background-color: $gray-3-color !important; 
+        color: $white-color
+    }
+    
+    &.badge-smoke {
+        background-color: $smoke-color !important; 
+        color: $dark-color
+    }
+    
+    &.badge-offwhite {
+        background-color: $offwhite-color !important; 
+        color: $gray-1-color
+    }
+
+    &.badge-primary {
+        background-color: $primary-color !important; 
+        color: $white-color
+    }
+    
+    &.badge-info {
+        background-color: $info-color !important; 
+        color: $white-color
+    }
+    
+    &.badge-success {
+        background-color: $success-color !important; 
+        color: $white-color
+    }
+    
+    
+    &.badge-warning {
+        background-color: $warning-color !important; 
+        color: $dark-color
+    }
+    
+    &.badge-danger {
+        background-color: $danger-color !important; 
+        color: $white-color
+    }
+
+    &.badge-blue {
+        background-color: $blue-color !important;
+         color: $white-color
+    }
+    
+    //lighten  
+    &.badge-dark-lighten {
+        background-color: $dark-lighten !important; 
+        color: darken($dark-color, 0%)
+    }
+
+    &.badge-secondary-lighten {
+        background-color: $secondary-lighten !important; 
+        color: darken($secondary-color, 30%)
+    }
+
+    &.badge-primary-lighten {
+        background-color: $primary-lighten !important; 
+        color: darken($primary-color, 15%)
+    }
+
+    
+    &.badge-info-lighten {
+        background-color: $info-lighten !important; 
+        color: darken($info-color, 15%)
+    }
+        
+    &.badge-success-lighten {
+        background-color: $success-lighten !important; 
+        color: darken($success-color, 15%)
+    }
+        
+    &.badge-warning-lighten {
+        background-color: $warning-lighten !important; 
+        color: darken($warning-color, 15%)
+    }
+
+    &.badge-danger-lighten {
+        background-color: $danger-lighten !important; 
+        color: darken($danger-color, 15%)
+    }
+
+    &.badge-blue-lighten {
+        background-color: $blue-lighten !important; 
+        color: darken($blue-color, 15%)
+    }
+}
+
+//badge-group
+.badge-group {
+    .badge {
+        margin-bottom: 8px;
+    }
+}//badge-group

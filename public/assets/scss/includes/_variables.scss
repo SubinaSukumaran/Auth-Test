@@ -1,0 +1,111 @@
+// - variables - //
+
+// Colors
+$white:                    #ffffff;
+$black:                    #000000;
+$dark:                     #1A2326;
+$gray-1:                   #364349;
+$gray-2:                   #485861;
+$gray-3:                   #ABB4B9;
+$gray-4:                   #dee2e6;
+$smoke:                    #EFEFEF;
+$offwhite:                 #F5F6FA;
+
+$purple:                   #7A3EFB;
+$purple-dark:              #5B2EBC;
+$blue:                     #18A6F5;
+$blue-dark:                #127CB8;
+$accent:                   #00CAD1;
+$accent-dark:              #00979D;
+$green:                    #00B41A;
+$green-dark:               #018F16;
+$yellow:                   #FFC107;
+$yellow-dark:              #E8AE00;
+$red:                      #FF3E44;
+$red-dark:                 #BF2E33;
+
+
+// Social brands
+$facebook:                 #3b5998;
+$instagram:                #e1306c;
+$linkedin:                 #0077b5;
+$pinterest:                #bd081c;
+$twitter:                  #1da1f2;
+$behance:                  #1769ff;
+$github:                   #333333;
+$whatsapp:                 #25d366; /*#128c7e*/
+$google:                   #ea4335;
+
+//special color
+$bg-color-1:               #F24E1E;
+$bg-color-2:               #A259FF;
+$bg-color-3:               #0ACF83;
+$bg-color-4:               #1ABCFE;
+$bg-color-5:               #F39C11;
+$bg-color-6:               #6e79ff;
+$bg-color-7:               #b157c1;
+$bg-color-8:               #a9806e;
+$bg-color-9:               #896cea;
+$bg-color-10:              #eb7c67;
+
+
+$white-color:               $white;
+$black-color:               $black;
+$dark-color:                $dark;
+$gray-1-color:              $gray-1;
+$gray-2-color:              $gray-2;
+$gray-3-color:              $gray-3;
+$gray-4-color:              $gray-4;
+$smoke-color:               $smoke;
+$offwhite-color:            $offwhite;
+
+
+
+$primary-color:             $purple;
+$secondary-color:           $gray-2;
+$blue-color:                $blue;
+$info-color:                $accent;
+$success-color:             $green;
+$warning-color:             $yellow;
+$danger-color:              $red;
+
+$primary-dark-color:        $purple-dark;
+$secondary-dark-color:      $gray-1;
+$blue-dark-color:           $blue-dark;
+$info-dark-color:           $accent-dark;
+$success-dark-color:        $green-dark;
+$warning-dark-color:        $yellow-dark;
+$danger-dark-color:         $red-dark;
+
+
+$primary-alpha:             rgba($primary-color, 0.20);
+$secondary-alpha:           rgba($secondary-color, 0.20);
+$blue-alpha:                rgba($blue-color, 0.20);
+$info-alpha:                rgba($info-color, 0.20);
+$success-alpha:             rgba($success-color, 0.20);
+$warning-alpha:             rgba($warning-color, 0.20);
+$danger-alpha:              rgba($danger-color, 0.20);
+
+$dark-lighten:              lighten($dark-color, 70%);
+$primary-lighten:           lighten($primary-color, 33%);
+$secondary-lighten:         lighten($secondary-color, 60%);
+$blue-lighten:              lighten($blue-color, 39%);
+$info-lighten:              lighten($info-color, 43%);
+$success-lighten:           lighten($success-color, 49%);
+$warning-lighten:           lighten($warning-color, 33%);
+$danger-lighten:            lighten($danger-color, 33%);
+
+
+// Gradients
+$bg-gradient:               linear-gradient(55deg, $primary-color 0%, $blue-color 100%);
+
+// Shadow
+$shadow-0:                  none;
+$shadow:                    0 10px 13px rgba(206, 212, 237, 0.3);
+$shadow-1:                  0 1px 3px rgba(#CED4ED, 0.12), 0 1px 2px rgba(#CED4ED, 0.24);
+$shadow-2:                  0 3px 6px rgba(#CED4ED, 0.16), 0 3px 6px rgba(#CED4ED, 0.23);
+$shadow-3:                  0 10px 20px rgba(#CED4ED, 0.19), 0 6px 6px rgba(#CED4ED, 0.23);
+$shadow-4:                  0 14px 28px rgba(#CED4ED, 0.25), 0 10px 10px rgba(#CED4ED, 0.22);
+$shadow-5:                  0 19px 38px rgba(#CED4ED, 0.35), 0 15px 12px rgba(#CED4ED, 0.22);
+$shadow-x-1:                0 34px 114px rgba(#CED4ED, 0.3);
+$shadow-y-1:                -34px 0 114px rgba(#CED4ED, 0.3);

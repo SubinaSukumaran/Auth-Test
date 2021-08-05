@@ -1,0 +1,631 @@
+// - form - //
+
+// ------------------------ || General - Start || ------------------------ //
+::placeholder {
+  color: $gray-1-color;
+}
+
+.form-control {padding: 15px; min-height: 50px; border-color: rgba($dark-color, 0.10); background-color: $white-color; color: $gray-1-color;
+    &:focus {box-shadow: none; background: $white-color; border-color: $gray-3-color;}
+ }
+ .form-control-sm {min-height: 35px;}
+ .field {font-size: 15px;}
+ .invalid-feedback       {color: $danger-color; font-size: 11px;}
+ .form-control.is-valid, .was-validated .form-control:valid {color: $success-color;}
+ 
+ .form-control.is-valid:focus, .was-validated .form-control:valid:focus,
+ .form-control.is-invalid:focus, .was-validated .form-control:invalid:focus {
+   box-shadow: none;
+ }
+ .inline-form .btn {margin-left: -3px; border-radius: 0 3px  3px 0;}
+ .field:required:focus {border-color: $danger-color;}
+ // ------------------------ || General - Stop || ------------------------ //
+ 
+ .password-wrap {
+  .toggle-password {
+    position: absolute;
+    top: 13px;
+    right: 12px;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+ }//password-wrap
+  .is-invalid~.toggle-password, 
+  .was-validated :invalid~.toggle-password,
+  .form-control.is-valid~.toggle-password, 
+  .was-validated .form-control:valid~.toggle-password {
+      right: 28px;
+  }
+ 
+.form-icons {
+  .input-group-addon {position: absolute; z-index: 2; left: 1px; top:1px; width: 50px; height:calc(100% - 2px); background: $smoke-color;
+  display: flex; align-items: center; justify-content: center; border-radius:3px 0 0 3px; }
+  .field {padding-left:60px;}
+  .is-floating-label{
+      label {left: 60px;}
+    }
+    &.was-validated {
+      .form-group.required-item {margin-bottom: 35px;}
+      .valid-feedback,
+      .invalid-feedback {position: absolute;}
+      .field-info {margin-top: 20px;}
+    }
+ }//form-icons
+
+
+ form {
+   &.type-1 {
+     .form-group {
+      &.is-floating-label {
+        label {
+        top: 22px;
+        left: 15px;
+        margin: 0;
+        background: none;
+        padding: 0;
+        }
+      }
+      .form-control {
+          height:65px;
+          padding-top: 30px;
+          color: $dark-color;
+      }
+      &.textarea {
+        &.is-floating-label {
+            label {
+              top: 22px;
+            }
+          }
+        .form-control {
+          height: auto;
+        }
+        &.is-focused{
+          label {
+            top: 10px;
+            transform: translateY(0);
+          }
+        }
+        }//textarea
+      &.is-focused{
+        label {
+          top: 10px;
+          transform: translateY(0);
+          left: 15px;
+          font-size: 13px;
+          opacity: 0.6;
+        }
+      }
+   }
+   .btn {border-radius: 0 0 0.25rem 0.25rem;}
+  }//type-1
+ }//form
+
+
+ .bootstrap-select {
+    .dropdown-toggle {color: $gray-1-color;  @include font-weight(medium); border-color: rgba($dark-color, 0.10);
+      &:focus {outline: none !important;}
+      .filter-option {
+        display: flex;
+        align-items: center;
+      }
+      .filter-option-inner {width: 100%;}
+      .filter-option-inner-inner {text-overflow: ellipsis; width: 100%;}
+    }
+    &.no-border {
+      .btn {
+        border: none;
+      }
+    }
+  &.select-1 {
+    .btn {
+      min-height: 50px; 
+      padding: 6px 14px;
+      @extend %body-font;
+      background-color: $white-color;
+      z-index: initial !important;
+      color: $gray-1-color;
+    }
+  }//select-1
+
+  &.show-tick .dropdown-menu .selected span.check-mark {
+    top: 11px;
+  }
+  .dropdown-menu {width: 100%; z-index: 1515;
+    .bs-searchbox {
+      .form-control {min-height: 20px; padding: 8px; background: $white-color; color: $gray-1-color;
+         border-color: $gray-2-color !important; box-shadow: none !important;
+        }
+    }//bs-searchbox
+    &.inner {
+      .dropdown-header {background: $smoke-color; padding: 10px; border-radius: 0;}
+      .dropdown-item {padding:10px 10px; display: flex; align-items: center; border-radius: 0;
+        &:hover {background: rgba($primary-color, 0.10);}
+      &.active,
+      &:active {background: $primary-lighten; color: darken($primary-color, 20%)}
+      .text {overflow: hidden; text-overflow: ellipsis; width: 100%;}
+      .bs-ok-default:after {border-width: 0 2px 2px 0;}
+      }//dropdown-item 
+      .no-results {font-size: 11px; font-style: italic; background: rgba($danger-color ,0.08); 
+        padding: 8px 15px;}
+    }//inner
+    .notify {font-size: 13px; background: $warning-lighten; 
+      padding: 8px 15px;}
+  }//dropdown-menu
+ }//bootstrap-select
+
+ .label-inside {
+  .bootstrap-select {
+    .dropdown-toggle {
+      .filter-option-inner-inner {
+        padding-top: 11px;
+      }
+    }
+  }//bootstrap-select
+}//label-inside
+
+
+.was-validated .bootstrap-select .selectpicker:invalid+.dropdown-toggle {margin-bottom: 15px;}
+.was-validated .bootstrap-select .selectpicker:invalid+.dropdown-toggle::before  {
+  content:'Please ' attr(title); 
+  position: absolute; 
+  top: 52px; 
+  left:0; 
+  color: $danger-color; 
+  font-size: 13px;
+}
+.was-validated .type-radio input[type="radio"]:invalid+.checkmark,
+.was-validated .type-checkbox input[type="checkbox"]:invalid+.checkmark {border-color: $danger-color;}
+
+ 
+// ------------------------ || Floating Label - Start || ------------------------ //
+ .is-floating-label {
+   position: relative;
+ }
+ .is-floating-label label {
+   opacity: 0.5;
+   pointer-events: none;
+   position: absolute;
+   z-index: 1;
+   top: 14px;
+   left: 15px;
+   transform: translate3d(0, 0, 0) scale(1);
+   transform-origin: left top;
+   transition: 100ms;
+ }
+ .is-floating-label.is-focused label {
+   opacity: 1;
+   padding: 3px;
+   transform: translateY(-23px) scale(0.75);
+   background: $white-color;
+ }
+ .required-item:after {
+   content: '*';
+   position: absolute;
+   z-index: 1;
+   right: 5px;
+   top: 5px;
+   color: $red;
+ }
+
+ .is-floating-label {
+  &.label-inside {
+    textarea.form-control {
+      padding-top: 20px;
+    }//textarea
+    .form-control {
+      padding-top: 30px;
+    }//form-control
+    &.is-focused {
+    label {
+        padding: 0;
+        transform: translateY(-8px) scale(0.75);
+        opacity: 0.7;
+        background-color: transparent;
+      }//label
+    }//is-focused 
+  }//label-inside
+ }//is-floating-label
+ // ------------------------ || Floating Label - Stop || ------------------------ //
+
+ 
+ // ------------------------ || Custom Check - Start || ------------------------ //
+
+ .custom-check {
+  display: block;
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  user-select: none;
+}  
+.custom-check input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  left: 0;
+}  
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: $white-color;
+  transition: ease-in 0.2s;
+  overflow: hidden;
+  border:1px solid $gray-3-color;
+}  
+.custom-check input:checked ~ .checkmark {
+  background-color: $primary-lighten;
+  border-color: $primary-color;
+}  
+.checkmark::after {
+  content: "";
+  position: absolute;
+  opacity: 1;
+  transform: scale(3);
+  transition: ease-in-out 0.2s;
+  content: '';
+}
+
+// type-checkbox
+.custom-check.type-checkbox .checkmark {border-radius: 2px;}
+.custom-check.type-checkbox .checkmark::after {
+ left: 6px;
+ top: 3px;
+ width: 5px;
+ height: 10px;
+ border: solid $primary-color;
+ border-width: 0 2px 2px 0;
+ transform: rotate(45deg) scale(3);
+ transition: ease-in-out 0.2s;
+ opacity: 0;
+ content: '';
+}
+.custom-check.type-checkbox input:checked ~ .checkmark::after {    
+   transform: rotate(45deg) scale(1);
+   opacity: 1;
+}
+
+//  type-radio 
+.custom-check.type-radio .checkmark {border-radius:50%;}
+.custom-check.type-radio .checkmark:after {
+  left: 4px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border:none;
+  border-radius:50%;
+  background-color: $primary-color;
+  opacity: 0;
+}
+.custom-check.type-radio input:checked ~ .checkmark:after {    
+    transform: scale(1);
+    opacity: 1;
+}
+
+//  type-1 (Text in side of the check box)
+.custom-check {
+  &.type-1 {
+    padding: 0;
+    .checkmark {
+      position: inherit;
+      width: auto;
+      height: auto;
+      padding: 6px 15px;
+      //border: 1px solid $gray-4;
+      border-radius: .25rem;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      &::after {
+      display: none;
+      }
+      &:hover {
+        border: 1px solid $gray-3;
+      }
+    }//checkmark
+    input:checked ~ .checkmark {
+      color: darken($primary-color, 20%);
+      &:hover {
+        border: 1px solid darken($primary-color, 20%);
+      }
+    }
+  }//type-1
+}
+
+
+.custom-check {
+ &.type-success {
+   input:checked ~ .checkmark {
+     background-color: $success-lighten;
+     border-color: $success-color;
+   }
+   .checkmark::after {    
+     border-color: $success-color;  
+   }
+ }//type-success
+ 
+ &.type-blue {
+   input:checked ~ .checkmark {
+     background-color: $blue-lighten;
+     border-color: $blue-color;
+   }
+   .checkmark::after {    
+     border-color: $blue-color;
+   }
+ }//type-blue
+
+ //radio
+ &.type-radio {
+   &.type-success {
+     .checkmark:after {
+       background-color: $success-color;
+     }
+   }//type-success
+   &.type-blue {
+     .checkmark:after {
+       background-color: $blue-color;
+     }
+   }//type-blue
+ }//type-radio
+
+}//custom-check
+// ------------------------ || Custom Check - Stop || ------------------------ //
+
+ 
+
+// ------------------------ || Custom Control - Start || ------------------------ //
+.custom-control-label::before { 
+  box-shadow: none !important;
+}
+.custom-control-input:focus:not(:checked)~.custom-control-label::before {
+  border-color: $gray-3-color;
+}
+.custom-control-input:not(:disabled):active~.custom-control-label::before {
+  background-color: $white-color;
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+  color: $primary-color;
+  border-color: $primary-color;
+  background-color: $primary-lighten;
+}
+.custom-switch .custom-control-input:checked~.custom-control-label::after {
+  background-color: $primary-color;
+}
+
+.custom-control-input.is-valid:checked~.custom-control-label::before, 
+.was-validated .custom-control-input:valid:checked~.custom-control-label::before {
+    border-color: $success-color;
+    background-color: $success-color;
+}
+
+.custom-control-input.is-valid:checked~.custom-control-label::after, 
+.was-validated .custom-control-input:valid:checked~.custom-control-label::after {
+    background-color: $white-color;
+}
+
+//type-blue
+.type-blue .custom-control-input:checked~.custom-control-label::before {
+  color: $blue-color;
+  border-color: $blue-color;
+  background-color: $blue-lighten;
+}
+.type-blue.custom-switch .custom-control-input:checked~.custom-control-label::after {
+  background-color: $blue-color;
+}
+
+//type-success
+.type-success .custom-control-input:checked~.custom-control-label::before {
+  color: $success-color;
+  border-color: $success-color;
+  background-color: $success-lighten;
+}
+.type-success.custom-switch .custom-control-input:checked~.custom-control-label::after {
+  background-color: $success-color;
+}
+
+//type-danger
+.type-danger .custom-control-input:checked~.custom-control-label::before {
+  color: $danger-color;
+  border-color: $danger-color;
+  background-color: $danger-lighten;
+}
+.type-danger.custom-switch .custom-control-input:checked~.custom-control-label::after {
+  background-color: $danger-color;
+}
+
+
+.custom-switch {
+  &.size-2x {
+    padding-left: 50px;
+    .custom-control-label::before {
+      width: 40px;
+      height: 24px;
+      border-radius: 25px;
+      top: 0;
+      left: -50px;     
+    }
+    .custom-control-label::after {
+      top: 4px;
+      width: 16px;
+      height: 16px;
+      border-radius: 25px;
+      transform: translateX(-12px);
+    }
+    .custom-control-label {
+      padding-top: 2px;
+      cursor: pointer;
+    }
+
+    .custom-control-input:checked~.custom-control-label::after {
+      transform: translateX(4px);
+    }
+  }//size-2x
+}//custom-switch
+// ------------------------ || Custom Control - Stop || ------------------------ //
+
+
+
+ 
+// ------------------------ || Select2 - Start || ------------------------ //
+.select2-container {
+    .select2-selection {
+     min-height: 50px !important;
+     display: flex;
+     align-items: center;
+     border-color: rgba($dark-color, 0.10) !important;
+     outline: none !important;
+     }
+     &.select2-container--open  {
+       .select2-selection{
+         border-color: $gray-3-color !important;     
+       }
+     }
+     .select2-search--inline {
+      .select2-search__field {
+        margin-top: 0;
+      }
+     }
+     .select2-selection__choice {
+       margin-top: 0;
+       margin-bottom: 5px;
+       background-color: rgba($primary-color, 0.10) !important;
+     }
+     .select2-results__option[aria-selected=true] {
+       background-color: $smoke-color;
+       &:hover {
+         background-color: $gray-3-color;
+       }
+     }
+    .select2-results__option--highlighted[aria-selected] {
+      background-color: $primary-color;
+    }
+    .select2-selection__arrow {
+      top: 50% !important;
+      transform: translateY(-50%);
+    }
+
+    .select2-selection__rendered {
+      margin: 0 8px !important;
+      padding: 0 !important;
+    }
+   }//select2-container
+   
+   .select2-dropdown {
+     border-color: $gray-3-color;
+     .select2-results__message {
+       font-size: 13px; background: rgba($danger-color ,0.10);
+     }
+   }
+// ------------------------ || Select2 - Stop || ------------------------ //
+
+
+
+// ------------------------ || Date Range Picker - Start || ------------------------ //
+   .daterangepicker {
+    .calendar-table td,
+    .calendar-table th {
+      width: 32px;
+      height: 32px;
+    }
+    td {
+     &.in-range {
+       background: lighten($primary-color, 35%);
+      //color: $primary-color;
+     }//in-range
+     
+    &.active {
+      background: lighten($primary-color, 20%);
+      &:hover {
+        background: lighten($primary-color, 20%);
+      }
+    }//active
+
+    &.today {
+      background: $primary-color;
+      color: $white-color;
+      &:hover {
+        background: $primary-color;
+        color: $white-color;
+      }
+    }//tody
+  }//td
+   }//daterangepicker
+// ------------------------ || Date Range Picker - Stop || ------------------------ //
+
+
+
+// ------------------------ || Filepond - Stop || ------------------------ //
+//Website: https://pqina.nl/filepond/
+// Document: https://pqina.nl/filepond/docs/patterns/getting-started/
+// GitHub: https://github.com/pqina/filepond
+.filepond--root {
+  background-color: $offwhite-color;
+  border: 2px dashed $gray-4-color;    
+  border-radius: 6px;
+  .filepond--drop-label {
+    background-color: transparent;
+    color: $gray-2-color;
+    font-size: 13px;
+    .filepond--label-action {
+      text-decoration-color: $gray-2-color;
+      &:focus{
+        outline: none;
+      }
+    }
+  }  
+  
+  .filepond--panel-root {
+    background-color: transparent;
+  }
+  
+  .filepond--item-panel {
+    background-color: $dark-color;
+    box-shadow: none !important;
+  }//for upload bg
+
+  [data-filepond-item-state*=error], 
+  [data-filepond-item-state*=invalid] .filepond--item-panel {
+    background-color: $danger-color;
+  }//for error bg
+  
+  .filepond--drip {
+    background-color: transparent;
+  }
+  .filepond--drip-blob {
+    background-color: $danger-color;
+  }
+  .filepond--list {
+    li {
+      .filepond--image-preview-wrapper {
+        // border-radius: 6px;
+        .filepond--image-preview {
+          background-color: transparent;
+          background-color: transparent;
+        }
+      }
+    }
+  }//filepond--list
+  
+  .filepond--credits {
+    display: none;
+  }
+}//filepond--root
+
+
+.filepond-profile {
+  width: 130px;
+  height: 130px;
+  .filepond--file-info {
+    display: none;
+  }
+}
+// ------------------------ || Filepond - Stop || ------------------------ //

@@ -1,0 +1,122 @@
+// - table - //
+
+table {
+    &.table-1 {
+        color: $gray-2-color;
+        thead {
+            th {
+                &.sortable {
+                    cursor: pointer;
+                    i {
+                        opacity: .6;
+                    }
+                    &.active {
+                    i {
+                        color: $dark-color;
+                        opacity: 1;
+                    }
+                    }
+                }//sortable
+            }
+        }//thead
+    }//table-1
+
+    
+
+    &.table-striped {
+        tbody  {
+            tr:nth-of-type(odd) {
+                background-color: $offwhite-color;
+            }
+        }
+    }//table-striped
+
+    &.table-hover {
+        tbody {
+            tr {
+                &:hover {
+                    color: $gray-1-color;
+                    background-color: lighten($primary-color, 37%);
+                }//hover
+            }//tr
+        }//tbody
+    }//table-hover
+
+  }//table
+
+
+
+/*##################################
+R E S P O N S I V E
+##################################*/
+
+// Maximum Width
+/*Large devices (desktops, <1199px) xl*/
+@media (max-width: 1199.98px) {
+
+}
+
+/* Medium devices (tablets, <992px) lg*/
+@media (max-width: 991.98px) {
+    table {
+        &.table-1 {
+            border-left: 0;
+            border-right: 0;
+            border-bottom: 0;
+            thead {
+               display: none;
+           }
+           tr {
+               border-bottom: 1px solid $gray-4-color;
+               display: flex;
+               flex-wrap: wrap;
+               margin-bottom: 15px;
+               &:first-child {                   
+                td:first-child {
+                    border-top: 0;
+                }
+               }
+            }             
+           td {
+               border-top: 1px solid $gray-4-color;
+               border-bottom: 0;
+               display: flex;
+               flex-direction: column;
+               width: 100%;
+            }
+           td::before {
+               /*
+               * aria-label has no advantage, it won't be read inside a table
+               content: attr(aria-label);
+               */
+               content: attr(data-label);
+               display: block;
+               @include font-weight(bold);
+               margin-bottom: 15px;
+            }
+        }//table-1
+
+        &.table-hover {
+            tbody {
+                tr {
+                    &:hover {
+                        color: $gray-1-color;
+                        background-color: initial
+                    }//hover
+                }//tr
+            }//tbody
+        }//table-hover
+
+    }//table
+}//991.98
+
+/* Small devices (landscape phones, <768px) md*/
+@media (max-width: 767.98px) {
+
+}//767.98
+
+
+/* Extra small devices (portrait phones, <576px) sm*/
+@media (max-width: 575.98px) {
+
+}//575.98px

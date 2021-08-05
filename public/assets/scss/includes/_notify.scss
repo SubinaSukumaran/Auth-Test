@@ -1,0 +1,44 @@
+// - notify - //  
+
+[data-notify="container"] {
+    max-width: 400px;
+
+    &.alert-light {
+        border: 1px solid $smoke-color;
+        color: $gray-1-color;
+    }//light
+}//container
+
+
+[data-notify="title"] {
+    @include font-weight(semi-bold);
+}//title
+
+
+[data-notify="message"] {
+}//message
+
+
+[data-notify="dismiss"] {
+    outline: none !important;
+}//dismiss
+
+
+[data-notify="actions"] {
+    button {
+        position: initial !important;
+    }
+}//actions
+
+[data-notify="progressbar"] {
+    margin-bottom: 0;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    width: calc(100% - 10px);
+    height: 3px;
+    background: rgba($dark-color, .3);
+    .progress-bar {
+        background-color: rgba($dark-color, .5);
+    }
+}//progressbar

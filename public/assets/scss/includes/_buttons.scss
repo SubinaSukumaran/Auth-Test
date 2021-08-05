@@ -1,0 +1,524 @@
+// - buttons - //
+
+.buttons {
+  .btn {
+    margin: 0 8px 8px 0;
+  }
+  .btn:last-child {
+    margin-right: 0;
+  }
+}//buttons
+
+// ------------------------ || Button - Start || ------------------------ //
+.btn {
+  padding: 6px 18px;
+  outline: none !important;
+  &:focus, &:active {
+    box-shadow: none !important;
+    outline: none !important;
+  }
+  &.rounded {
+    border-radius: 100px !important;
+  }
+  & i {
+    vertical-align: baseline;
+    margin-right: 5px;
+  }
+  &.btn-icon-right {
+    i {
+      margin-right: 0; 
+      margin-left: 5px;
+    }
+  }
+  &:disabled, &.disabled {
+    pointer-events: none;
+  }
+  //sm
+  &.btn-sm {
+    // padding: .25rem .6rem;
+    font-size: 13px;
+  }
+
+
+//Start General    
+  &.btn-black {
+    background: $black-color; 
+    border-color: $black-color; color: 
+    $primary-color;
+    &:hover, &:active, &.active, &:focus, &.focus {
+      background: $black-color !important; 
+      color: $white-color; 
+      border-color: $black-color;
+    }
+  }
+  //black    
+
+  &.btn-dark {
+    background: $dark-color; 
+    border-color: $dark-color; 
+    color: $white;
+    box-shadow: 0 2px 16px rgba($dark-color, .3);
+    &:hover, &:active, &.active, &:focus, &.focus {
+      background: $black-color !important; color: $white-color;}
+  }
+  &.btn-dark-outline {
+    border-color: $dark-color; 
+    color: $dark-color;
+    &:hover, &:active, &.active, &:focus, &.focus {
+      background: $dark-color !important;
+      color: $white;
+    }
+  }
+  //dark
+
+  &.btn-secondary {background: $secondary-color;
+    border-color: $secondary-color; 
+    color: $white-color;
+    box-shadow: 0 2px 16px rgba($secondary-color, .3);
+    &:disabled, &.disabled {
+      background: $secondary-color; 
+      border-color: $secondary-color !important; 
+      color: $white-color;
+    }
+    &:hover, &:active, &.active, &:focus, &.focus {
+      background: $gray-1-color !important; 
+      color: $white-color;}
+  }
+  &.btn-secondary-outline {
+    border-color: $gray-3-color;
+    color: $secondary-color;
+    &:hover, &:active, &.active, &:focus, &.focus {
+      background: $secondary-color !important;
+      color: $white-color;}
+  }
+  //secondary
+
+  &.btn-primary {
+    background: $primary-color; 
+    border-color: $primary-color; 
+    color: $white-color;
+    box-shadow: 0 2px 16px rgba($primary-color, .3);
+    &:disabled, &.disabled {
+      background: $primary-color; 
+      border-color: $primary-color; 
+      color: $white-color;
+    }
+    &:hover, &:active, &.active, &:focus, &.focus {
+      background: $primary-dark-color !important;
+      color: $white-color;
+      border-color: $primary-color !important;
+    }
+  }
+  &.btn-primary-outline {
+    border-color: $primary-color;
+    color: $primary-color;
+    &:hover, &:active, &.active, &:focus, &.focus {
+      background: $primary-dark-color !important;
+      color: $white-color;
+    }
+  }
+  //primary
+
+  &.btn-info {
+    background: $info-color;
+    border-color: $info-color; 
+    color: $white-color;
+    box-shadow: 0 2px 16px rgba($info-color, .3);
+    &:disabled, &.disabled {
+      background: $info-color; 
+      border-color: $info-color;
+      color: $white-color;
+    }
+    &:hover, &:active, &.active, &:focus, &.focus {
+      background: $info-dark-color !important;
+      border-color: $info-dark-color;
+      color: $white-color;}
+  }
+  &.btn-info-outline {
+    border-color: $info-color;
+    color: $info-color;
+    &:hover, &:active, &.active, &:focus, &.focus {
+      background: $info-color !important;
+      color: $white-color;
+    }
+  }
+  //info
+
+  &.btn-success {
+    background: $success-color; 
+    border-color: $success-color; 
+    color: $white-color;
+    box-shadow: 0 2px 16px rgba($success-color, .3);
+    &:disabled, &.disabled {
+      background: $success-color; 
+      border-color: $success-color; 
+      color: $white-color;
+    }
+    &:hover, &:active, &.active, &:focus, &.focus {
+      background: $success-dark-color !important; 
+      border-color: $success-dark-color;  
+      color: $white-color;}
+  }
+  &.btn-success-outline {
+    border-color: $success-color; 
+    color: $success-color;
+    &:hover, &:active, &.active, &:focus, &.focus {
+      background: $success-color !important; 
+      color: $white-color;
+    }
+  }
+  //success
+
+  &.btn-warning {
+    background: $warning-color; 
+    border-color: $warning-color;
+    color: $dark-color;
+    box-shadow: 0 2px 16px rgba($warning-color, .3);
+    &:disabled, &.disabled {
+      background: $warning-color; 
+      border-color: $warning-color; 
+      color: $dark-color;
+    }
+    &:hover, &:active, &.active, &:focus, &.focus {
+      background: $warning-dark-color !important; 
+      border-color: $warning-dark-color;  
+      color: $dark-color;
+    }
+  }
+  &.btn-warning-outline {
+    border-color: $warning-color; 
+    color: $warning-color;
+    &:hover, &:active, &.active, &:focus, &.focus {
+      background: $warning-color !important; 
+      color: $dark-color;
+    }
+  }
+  //warning
+
+  &.btn-danger {
+    background: $danger-color;
+    border-color: $danger-color; 
+    color: $white-color;
+    box-shadow: 0 2px 16px rgba($danger-color, .3);
+    &:disabled, &.disabled {
+      background: $danger-color; 
+      border-color: $danger-color; 
+      color: $white-color;
+    }
+    &:hover, &:active, &.active, &:focus, &.focus {
+      background: $danger-dark-color !important; 
+      border-color: $danger-dark-color;  
+      color: $white-color;
+    }
+  }
+  &.btn-danger-outline {
+    border-color: $danger-color; 
+    color: $danger-color;
+    &:hover, &:active, &.active, &:focus, &.focus {
+      background: $danger-color !important; color: $white-color;
+    }
+  }
+  //danger
+
+  &.btn-blue {
+    background: $blue-color; 
+    border-color: $blue-color;
+    color: $white-color;
+    box-shadow: 0 2px 16px rgba($blue-color, .3);
+    &:disabled, &.disabled {
+      background: $blue-color; 
+      border-color: $blue-color; 
+      color: $white-color;
+    }
+    &:hover, &:active, &.active, &:focus, &.focus {
+      background: $blue-dark-color !important; 
+      border-color: $blue-dark-color;  
+      color: $white-color;
+    }
+  }
+  &.btn-blue-outline {
+    border-color: $blue-color; 
+    color: $blue-color;
+    &:hover, &:active, &.active, &:focus, &.focus {
+      background: $blue-color !important; 
+      color: $white-color;
+    }
+  }
+  //blue
+
+  &.btn-link  {
+    color: $primary-color;
+    &:hover {
+      color: $primary-dark-color;
+    }
+  }//btn-link
+
+//Stop General
+
+
+
+//Start Lighten
+  &.btn-dark-lighten {
+    background-color: $dark-lighten;
+    color: darken($dark-color, 0%);
+    &:hover, &:active, &.active, &:focus, &.focus {
+      background-color: $black-color;
+      color: $white-color;
+    }
+  }
+  &.btn-secondary-lighten {
+      background-color: $secondary-lighten;
+      color: darken($secondary-color, 30%);
+      &:hover, &:active, &.active, &:focus, &.focus {
+        background-color: $gray-1-color;
+        color: $white-color;
+      }
+  }//secondary
+  &.btn-primary-lighten {
+    background-color: $primary-lighten;
+    color: darken($primary-color, 15%);
+    &:hover, &:active, &.active, &:focus, &.focus {
+      background-color: $primary-dark-color;
+      color: $white-color;
+    }
+  }//primary
+  &.btn-info-lighten {
+      background-color: $info-lighten;
+      color: darken($info-color, 15%);
+      &:hover, &:active, &.active, &:focus, &.focus {
+        background-color: $info-dark-color;
+        color: $white-color;
+      }
+  }//info       
+  &.btn-success-lighten {
+      background-color: $success-lighten;
+      color: darken($success-color, 15%);
+      &:hover, &:active, &.active, &:focus, &.focus {
+        background-color: $success-dark-color;
+        color: $white-color;
+      }
+  }//success
+  &.btn-warning-lighten {
+      background-color: $warning-lighten;
+      color: darken($warning-color, 15%);
+      &:hover, &:active, &.active, &:focus, &.focus {
+        background-color: $warning-dark-color;
+        color: $white-color;
+      }
+  }//warning
+  &.btn-danger-lighten {
+      background-color: $danger-lighten;
+      color: darken($danger-color, 15%);
+      &:hover, &:active, &.active, &:focus, &.focus {
+        background-color: $danger-dark-color;
+        color: $white-color;
+      }
+  }//danger
+  &.btn-blue-lighten {
+    background-color: $blue-lighten; 
+    color: darken($blue-color, 15%);
+    &:hover, &:active, &.active, &:focus, &.focus {
+      background-color: $blue-dark-color;
+      color: $white-color;
+    }
+  }//blue
+//Stop Lighten
+
+  &.btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    min-height: 32px;
+    padding: 3px 6px;
+    i {
+      margin: 0;
+    }
+    &.hover {
+      &:hover {
+        background-color: $smoke-color;
+      }
+    }//hover
+
+    &.type-white {
+      color: $white-color;
+      background-color: transparent;
+      &:hover {
+        background-color: $white-color;
+        color: $gray-2-color;
+      }
+    }//hover-1
+  }//btn-icon
+    
+  &.btn-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }//btn-circle
+
+  &.btn-pill {
+    border-radius: 50px;
+  }//btn-pill
+  
+  &.btn-modal-close {
+      position: absolute;
+      z-index: 2;
+      top: 5px;
+      right: 5px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $white-color;
+      border-radius: 50px;
+      font-size: 20px;
+      i {
+        margin: 0;
+      }
+      &:hover {
+        background-color: $smoke-color;
+      }
+    }//btn-modal-close
+
+}
+//Stop btn
+
+
+.next-priv {
+  a {
+    color: $gray-3-color;
+    &:hover {
+      color: $gray-2-color;
+    }
+  }
+}//next-priv
+
+
+/* Btn aware */
+.btn-aware{
+	background:transparent !important;
+	position: relative;
+	overflow: hidden;
+	z-index:1;
+&:hover{
+  background:transparent !important;
+  }
+span {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
+    transform: translate(-50%, -50%);
+    z-index:-1;
+  }
+  &:hover span {
+      width: 225%;
+      height: 562px;
+  }
+}//btn-aware
+// ------------------------ || Button - Stop || ------------------------ //
+
+
+// ------------------------ || Effects - Start || ------------------------ //
+// Shimmer
+.shimmer {
+    position: absolute;
+    top: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        display: flex;
+        flex-direction: row;
+        animation-name: Shimmer;
+        animation-iteration-count: infinite;
+        animation-duration: 3.5s;
+        animation-delay: 3s;
+        animation-fill-mode: backwards;
+          &::before {
+              display: block;
+              content: "";
+              width: 60px;
+              background-image: linear-gradient(90deg,hsla(0,0%,100%,0),#fff,hsla(0,0%,100%,.6),hsla(0,0%,100%,0));
+          }
+          &::after {
+            display: block;
+            content: "";
+            width: 60px;
+            background-image: linear-gradient(90deg,hsla(0,0%,100%,0),#fff,hsla(0,0%,100%,.6),hsla(0,0%,100%,0));
+          }
+  
+          &.type-1 {
+            opacity: 0.3;
+          }
+  }//shimmer
+  
+  @keyframes Shimmer {
+    0% {
+        transform: translateX(-100%)
+    }
+    25%,
+    to {
+        transform: translateX(100%)
+    }
+  }//Shimmer
+  
+  // Light Button
+  .btn-light-anim {
+    position: relative;
+    overflow: hidden;
+    &::before {
+      position: absolute;
+      left: 0;
+      background: linear-gradient(115deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, .75) 45%, rgba(255, 255, 255, .75) 55%, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0) 100%);
+      transform: rotate(45);
+      animation: buttonAnimation 3s linear infinite;
+      content: "";
+      height: 400%;
+      top: -150%;
+      width: 100%;
+      opacity: .5
+    }
+  }//btn-light-anim
+  @keyframes buttonAnimation {
+    0% {
+        transform: translateX(-150%)
+    }
+    100% {
+        transform: translateX(150%)
+    }
+  }//buttonAnimation
+
+//Ripple Button
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+  .ripple {
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    // background: rgba($primary-color, 0.05);
+    // background: rgba($gray-2-color, 0.03);
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(0);
+    position: absolute;
+    opacity: 1;
+  }
+  .rippleEffect {
+      animation: rippleDrop .6s linear;
+  }    
+}//btn-ripple
+
+@keyframes rippleDrop {
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+//rippleDrop
+  // ------------------------ || Effects - Stop || ------------------------ //  

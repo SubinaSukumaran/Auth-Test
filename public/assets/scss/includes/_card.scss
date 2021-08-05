@@ -1,0 +1,37 @@
+// - card - //
+
+.card {
+    .card-header {
+      &[class*="bg-"] {border-radius: .25rem .25rem 0 0}
+    }
+    .card-footer {
+      &[class*="bg-"] {border-radius: 0 0 .25rem .25rem}
+    }
+
+    &.card-login {
+      max-width: 500px;
+    }
+
+    &.card-role {}
+    &.card-drivers {}
+    &.card-driver-info {}
+    &.card-users {}
+    &.card-zone {}
+    &.card-coupon {}
+
+    &.card-vehicle {
+      figure {
+        &.car-img {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          img {
+            width: 80%;
+          }
+        }
+      }//figure
+    }//card-vehicle
+}//card
