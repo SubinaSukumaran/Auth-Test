@@ -530,6 +530,24 @@ private static $installed = array (
         0 => 'v7.30.4',
       ),
     ),
+    'jean85/pretty-package-versions' => 
+    array (
+      'pretty_version' => '2.0.4',
+      'version' => '2.0.4.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '694492c653c518456af2805f04eec445b997ed1f',
+    ),
+    'jenssegers/mongodb' => 
+    array (
+      'pretty_version' => 'dev-develop',
+      'version' => 'dev-develop',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'd58fae2e39dd2499e960303dac2559d0d01fa046',
+    ),
     'kodova/hamcrest-php' => 
     array (
       'replaced' => 
@@ -671,6 +689,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'd1339f64479af1bee0e82a0413813fe5345a54ea',
+    ),
+    'mongodb/mongodb' => 
+    array (
+      'pretty_version' => '1.9.0',
+      'version' => '1.9.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '4afe9254e87252879bfbb625858e78fbe072daa0',
     ),
     'monolog/monolog' => 
     array (

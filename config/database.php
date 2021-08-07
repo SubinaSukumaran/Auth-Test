@@ -90,6 +90,11 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
         ],
+        'mongodb' => [
+            'driver' => 'mongodb',
+            'dsn' => env('DB_URI', 'mongodb+srv://test-admin:testadmin@cluster0.jwgus.mongodb.net/test?retryWrites=true&w=majority'),
+            'database' => 'test',
+    ],
 
     ],
 

@@ -17,7 +17,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name', 'email', 'password','email_verified_at','disabled','email_verified','valid_since','last_login_at',
-        'valid_since','last_login_at','modified_at','user_type','mobile','fcm_token_id','photo_url'
+        'valid_since','last_login_at','modified_at','user_type','mobile','fcm_token_id','photo_url','api_token'
     ];
 
     public function getAuthIdentifierName() {

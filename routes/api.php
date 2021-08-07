@@ -19,13 +19,10 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::post('/user-details','User\UserController@fetch');
 
-
 Route::group(['middleware' => ['auth:sanctum']], function () {
 
-  
-    Route::post('/test','FrontEndController@policy');
-    // Route::post('/products', [ProductController::class, 'store']);
-    // Route::put('/products/{id}', [ProductController::class, 'update']);
-    // Route::delete('/products/{id}', [ProductController::class, 'destroy']);
-    // Route::post('/logout', [AuthController::class, 'logout']);
+    // Bookings Module
+    Route::post('/booking','Bookings\BookingController@store'); 
+    Route::get('/fetchAllBookings','Bookings\BookingController@fetchAllBookings');
+
 });

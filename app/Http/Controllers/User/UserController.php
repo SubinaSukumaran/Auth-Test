@@ -3,23 +3,19 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Models\AccessToken;
+use App\Models\PersonalAccessToken;
 use Illuminate\Support\Facades\DB;
 use App\Http\Traits\firbaseConfigurtaion;
-use Laravel\Sanctum\NewAccessToken;
-use Laravel\Sanctum\HasApiTokens;
+// use Laravel\Sanctum\NewAccessToken;
+// use Laravel\Sanctum\HasApiTokens;
 class UserController extends Controller
 {
     use firbaseConfigurtaion;
     public function fetch(Request $request)
     {
-        // $user = User::where('email', 'admin@movers.com')->first();
-        // $token = $user->createToken('token-name');
-
-// dd($token->plainTextToken);
-
-
+  
         $token_id=$request->token_id;
+        $authToken=$this->createToken("api token",$token_id);
 
         //API  call with mobile number & token_id
 
@@ -31,55 +27,51 @@ class UserController extends Controller
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $server_output = curl_exec($ch);
         curl_close ($ch);
-
         $output=json_decode($server_output);
         $userDetails=$output->users[0];
 
         // Store the data in MySQL DB
-
+        
         DB::beginTransaction();
         try{
 
             $timestamp = $userDetails->createdAt;
             $datetimeFormat = 'Y-m-d H:i:s';
             $date = new \DateTime();
-
             $user=User::create([
                 'disabled'=>$userDetails->disabled,
                 'email'=>$userDetails->email,
                 'email_verified'=>$userDetails->emailVerified,
-                'valid_since'=>$userDetails->validSince,
-                'last_login_at'=>$userDetails->lastLoginAt,
+                'valid_since'=>$date->format($datetimeFormat),
+                'last_login_at'=>$date->format($datetimeFormat),
                 'modified_at'=>$date->format($datetimeFormat),
-                // 'name'=>$userDetails->displayName,
+                // // 'name'=>$userDetails->displayName,
                 'name'=>"test user",
                 'user_type'=>"",
                 'mobile'=>$request->mobile_number,
-                // 'photo_url'=>$userDetails-> photoUrl,
+                // // 'photo_url'=>$userDetails-> photoUrl,
                 'photo_url'=>"",
                 'fcm_token_id'=>"",
-                'password'=>""
-
+                'password'=>"",
+                
             ]);
-            $name="test";
-             $token = $user->createToken('token-name')->plainTextToken;
 
+            // $token = $user->createToken('token-name')->plainTextToken;
 
-            // $token = $this->createToken($name,$token_id);
-            // $authentication=AccessToken::create([
-            //     'user_id'=>$user->id,
-            //     'tokenable_type'=>"",
-            //     'tokenable_id'=>1,
-            //     'name'=>"",
-            //     'abilites'=>"",
-            //     'token'=>$token,
-            //     'created_at'=>"",
-            //     // 'last_used_at'=>"",
-            //     // 'modified_at'=>"",
-            // ]);
+            User::where('id', $user->id)->update(['api_token' => $authToken]);
+            $authentication=PersonalAccessToken::create([
+                'tokenable_type'=>"App\Models\User",
+                'tokenable_id'=>$user->id,
+                'name'=>"token-name",
+                'abilites'=>"",
+                'token'=>$authToken,
+                'created_at'=>"",
+                // 'last_used_at'=>"",
+                // 'modified_at'=>"",
+            ]);
 
          DB::commit();
-            return response()->json(['status' => true, 'message' => "User added Successfully", 'data' =>[]], 200);
+            return response()->json(['status' => true, 'message' => "User added Successfully", 'data' =>[ ]], 200);
         }catch (\Exception $exception)
         {
             DB::rollBack();
@@ -87,8 +79,4 @@ class UserController extends Controller
         }
     }
 
-    public function login(Request $request)
-    {
-        dd("dhsfjs");
-    }
 }

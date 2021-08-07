@@ -28,5 +28,6 @@ trait firbaseConfigurtaion
         return $token;
    
     }
+    
 }
 ?>

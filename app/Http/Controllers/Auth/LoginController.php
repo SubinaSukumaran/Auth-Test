@@ -51,7 +51,7 @@ class LoginController extends Controller
      
         try {
            $signInResult = $this->auth->signInWithEmailAndPassword($request['email'], $request['password']);
-           dd( $signInResult);
+         //   dd( $signInResult);
     //dd( $signInResult->data()) ;
      // dd($signInResult->data());
       \Session::put('uid',  $signInResult->data()['localId']); 
@@ -61,7 +61,6 @@ class LoginController extends Controller
          \Session::put('role',  $signInResult->data()['displayName']); 
       }
      
-   
            $user = new User($signInResult->data());
  
            $result = Auth::login($user);

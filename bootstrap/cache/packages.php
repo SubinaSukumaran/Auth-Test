@@ -31,6 +31,14 @@
       0 => 'Fruitcake\\Cors\\CorsServiceProvider',
     ),
   ),
+  'jenssegers/mongodb' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Jenssegers\\Mongodb\\MongodbServiceProvider',
+      1 => 'Jenssegers\\Mongodb\\MongodbQueueServiceProvider',
+    ),
+  ),
   'kreait/laravel-firebase' => 
   array (
     'providers' => 
