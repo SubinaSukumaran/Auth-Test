@@ -54,7 +54,7 @@
                     <div class="card card-login border-0 shadow p-4 p-xl-5 radius-22 h-100">
                         <div class="mb-3 text-center">
                             <figure class="brand mb-4 mx-auto">
-                                <img src="" alt="Movers">
+                                <img src="{{asset('developer_assets/images/movers_logo.jpg')}}" alt="Movers">
                             </figure>
                            
                             <h5 class="text-gray-2">Forgot password?</h5>

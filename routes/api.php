@@ -17,12 +17,12 @@ use Illuminate\Support\Facades\Route;
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
-Route::post('/user-details','User\UserController@fetch');
+Route::post('/user-details','Api\User\UserController@fetch');
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
 
     // Bookings Module
-    Route::post('/booking','Bookings\BookingController@store'); 
-    Route::get('/fetchAllBookings','Bookings\BookingController@fetchAllBookings');
+    Route::post('/booking','Api\Bookings\BookingController@store'); 
+    Route::get('/fetchAllBookings','Api\Bookings\BookingController@fetchAllBookings');
 
 });

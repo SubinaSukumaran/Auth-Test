@@ -41,6 +41,7 @@
       24 => 'App\\Providers\\EventServiceProvider',
       25 => 'App\\Providers\\RouteServiceProvider',
       26 => 'Kreait\\Laravel\\Firebase\\ServiceProvider',
+      27 => 'Jenssegers\\Mongodb\\MongodbServiceProvider',
     ),
     'aliases' => 
     array (
@@ -110,6 +111,11 @@
     ),
     'providers' => 
     array (
+      'users' => 
+      array (
+        'driver' => 'eloquent',
+        'model' => 'App\\Models\\User',
+      ),
       'firebaseUser' => 
       array (
         'driver' => 'firebaseuserprovider',
@@ -311,6 +317,12 @@
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
+      ),
+      'mongodb' => 
+      array (
+        'driver' => 'mongodb',
+        'dsn' => 'mongodb+srv://test-admin:testadmin@cluster0.jwgus.mongodb.net/test?retryWrites=true&w=majority',
+        'database' => 'test',
       ),
     ),
     'migrations' => 'migrations',
@@ -611,6 +623,26 @@
       'table' => 'failed_jobs',
     ),
   ),
+  'sanctum' => 
+  array (
+    'stateful' => 
+    array (
+      0 => 'localhost',
+      1 => 'localhost:3000',
+      2 => '127.0.0.1',
+      3 => '127.0.0.1:8000',
+      4 => '::1',
+      5 => 'localhost',
+    ),
+    'expiration' => NULL,
+    'middleware' => 
+    array (
+      'verify_csrf_token' => 'App\\Http\\Middleware\\VerifyCsrfToken',
+      'encrypt_cookies' => 'App\\Http\\Middleware\\EncryptCookies',
+    ),
+    'prefix' => 'api',
+    'guard' => 'api',
+  ),
   'services' => 
   array (
     'mailgun' => 
@@ -700,22 +732,54 @@
     'local_sites_path' => '',
     'housekeeping_endpoint_prefix' => '_ignition',
   ),
-  'sanctum' => 
+  'datatables' => 
   array (
-    'stateful' => 
+    'search' => 
     array (
-      0 => 'localhost',
-      1 => 'localhost:3000',
-      2 => '127.0.0.1',
-      3 => '127.0.0.1:8000',
-      4 => '::1',
-      5 => 'localhost',
+      'smart' => true,
+      'multi_term' => true,
+      'case_insensitive' => true,
+      'use_wildcards' => false,
+      'starts_with' => false,
     ),
-    'expiration' => NULL,
-    'middleware' => 
+    'index_column' => 'DT_RowIndex',
+    'engines' => 
     array (
-      'verify_csrf_token' => 'App\\Http\\Middleware\\VerifyCsrfToken',
-      'encrypt_cookies' => 'App\\Http\\Middleware\\EncryptCookies',
+      'eloquent' => 'Yajra\\DataTables\\EloquentDataTable',
+      'query' => 'Yajra\\DataTables\\QueryDataTable',
+      'collection' => 'Yajra\\DataTables\\CollectionDataTable',
+      'resource' => 'Yajra\\DataTables\\ApiResourceDataTable',
+    ),
+    'builders' => 
+    array (
+    ),
+    'nulls_last_sql' => ':column :direction NULLS LAST',
+    'error' => NULL,
+    'columns' => 
+    array (
+      'excess' => 
+      array (
+        0 => 'rn',
+        1 => 'row_num',
+      ),
+      'escape' => '*',
+      'raw' => 
+      array (
+        0 => 'action',
+      ),
+      'blacklist' => 
+      array (
+        0 => 'password',
+        1 => 'remember_token',
+      ),
+      'whitelist' => '*',
+    ),
+    'json' => 
+    array (
+      'header' => 
+      array (
+      ),
+      'options' => 0,
     ),
   ),
   'trustedproxy' => 

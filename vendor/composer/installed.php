@@ -1475,5 +1475,14 @@
       ),
       'reference' => '6964c76c7804814a842473e0c8fd15bab0f18e25',
     ),
+    'yajra/laravel-datatables-oracle' => 
+    array (
+      'pretty_version' => 'v9.18.1',
+      'version' => '9.18.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '7148225d52bcdfdd77c24e8d456058f1150b84e7',
+    ),
   ),
 );

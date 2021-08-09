@@ -35,14 +35,15 @@ Route::post('/forgetPassword','AdminController@forgetPassword')->name('forgetPas
 Route::post('login/{provider}/callback', 'Auth\LoginController@handleCallback');
 
 Route::get('/no-access','AdminController@noAccess')->name('No Access');
-
-
 Route::group([  
     'middleware' => 'firebase',  
   ], function () {
 
 Route::get('/home','FirebaseAuthController@index')->name('home');
 
+// User module
+Route::get('/users','Web\User\UserController@index')->name('users');
+Route::get('/userData/{id}','Web\User\UserController@getUser')->name('user-data');
 // Admin Settings
  
    Route::post('changePassword','AdminController@changePassword');

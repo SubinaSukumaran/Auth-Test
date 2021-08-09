@@ -33,7 +33,7 @@
   <link href="{{asset('assets/css/e-drop.min.css')}}" rel="stylesheet">
   <!--for developers-->
   <link rel="stylesheet" href="{{asset('assets/css/developers.css')}}">
-  
+  <link rel="stylesheet" href="{{asset('developer_assets/css/jquery.dataTables.min.css')}}">
   <!-- Google fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
   
@@ -98,8 +98,6 @@
                                 <div class="dropdown-scroll radius-bottom-16 scrollbar-macosx no-scroll-x" id="notificationLive" >
                                
                                                                   
-                                
-            
                                     <!-- <div class="dropdown-footer text-center f-size-14">
                                         <a href="#" class="fw-medium">View All</a>
                                     </div> -->
@@ -150,21 +148,19 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                             </form>
-                         
-                                
+                          
                             </div>
                         </div><!--/user-control-->
                     </div>
                 </div>
             </div>
         </div>
-    </header>
-                         
+    </header>              
     <!-- /header -->
     <div id="sidebar" class="sidebar-wrap shadow-x-1">
        <div class="inner py-3">
             <div class="brand d-flex align-items-center justify-content-between p-3">
-                <a href="/view/home" class="flex-shrink-0"><img src="" width="90" alt="logo"></a>
+                <a href="/view/home" class="flex-shrink-0"><img src="{{asset('developer_assets/images/movers_logo.jpg')}}" width="90" alt="logo"></a>
                 <div class="ml-auto d-md-none">
                     <button id="sidebarClose" class="btn btn-icon f-size-18 btn-circle text-gray-3 hover"><i class="fas fa-times f-size-18"></i></button>
                 </div>
@@ -178,6 +174,13 @@
                                 <span class="text">Dashboard</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="/users" class=""  id="home-list">
+                                <span class="icon"><i class="fas fa-users"></i></span>
+                                <span class="text">Users</span>
+                            </a>
+                        </li>
+                       
                        
                     </ul>
                 </nav>
@@ -194,7 +197,7 @@
                    @yield('title')
                     <nav class="d-none d-sm-block" aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/view/home">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="/home">Dashboard</a></li>
                             @yield('header_title')
                          
                          </ol>
@@ -315,8 +318,9 @@
     <!-- <script src="{{asset('developer_assets/js/filepond/filepond-custom.js')}}"></script> -->
 
   <!-- <script src="assets/js/chart/chart-utils.js"></script> -->
-  <script src="{{asset('developer_assets/js/chart/chart-custom.js')}}"></script>
+  <!-- <script src="{{asset('developer_assets/js/chart/chart-custom.js')}}"></script> -->
   <!-- <script src="{{asset('developer_assets/js/chart/trip.js')}}"></script> -->
+  <script src="{{asset('developer_assets/js/jquery.dataTables.min.js')}}"></script>
 
   <!-- <script src="{{asset('developer_assets/js/chart/chart-bookings.js')}}"></script> -->
   <script src="{{asset('developer_assets/js/chart/chart-user.js')}}"></script>
